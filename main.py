@@ -1,3 +1,4 @@
+import sys
 import praw
 import os
 from dotenv import load_dotenv
@@ -19,5 +20,9 @@ reddit = praw.Reddit(
     username = USERNAME,
 )
 
-print(reddit.read_only)
-# Output: False
+if reddit.read_only:
+    print('Failed to login, check your credentials')
+    sys.exit()
+else:
+    print('Logged in successfully')
+
