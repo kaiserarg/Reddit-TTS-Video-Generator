@@ -40,13 +40,13 @@ for submission in subreddit.top(limit=1, time_filter='week'):
             continue
         wordcount += len(top_level_comment.body.strip().split(" "))
 
+        # limit it to 200 words,round down for comments 
         if(wordcount < 200):
             comments.append(top_level_comment.body) 
         else: 
             break
 
 
-        # limit it to 200 words,round down for comments 
 print(comments)
 print(len(comments))
 

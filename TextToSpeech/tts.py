@@ -1,5 +1,4 @@
 import pyttsx3
-import main
 
 audio = pyttsx3.init()
 audio.setProperty('rate', 200)
