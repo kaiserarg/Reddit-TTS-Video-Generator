@@ -1,5 +1,6 @@
 import sys
 import praw
+from praw.models import MoreComments
 import os
 from dotenv import load_dotenv
 
@@ -19,7 +20,18 @@ reddit = praw.Reddit(
     username = OATHUSER,
 )
 
+if reddit.read_only:
+    print('Failed to login, check your credentials')
+    sys.exit()
+else:
+    print('Logged in successfully')
+
 subreddit = reddit.subreddit("askreddit")
 
-for submission in subreddit.top(limit=25):
+for submission in subreddit.top(limit=1, time_filter='week'):
     print(submission.title)
+
+    for top_level_comment in submission.comments:
+        if isinstance(top_level_comment, MoreComments):
+            continue
+        print(top_level_comment.body)
