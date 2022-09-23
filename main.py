@@ -28,10 +28,25 @@ else:
 
 subreddit = reddit.subreddit("askreddit")
 
+wordcount = 0 
+comments = []
+
 for submission in subreddit.top(limit=1, time_filter='week'):
     postTitle = submission.title
-
+    print(submission.title)
+    
     for top_level_comment in submission.comments:
         if isinstance(top_level_comment, MoreComments):
             continue
-        print(top_level_comment.body)
+        wordcount += len(top_level_comment.body.strip().split(" "))
+
+        if(wordcount < 200):
+            comments.append(top_level_comment.body) 
+        else: 
+            break
+
+
+        # limit it to 200 words,round down for comments 
+print(comments)
+print(len(comments))
+
