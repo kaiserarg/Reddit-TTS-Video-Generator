@@ -4,4 +4,8 @@ You will have to install [praw](https://praw.readthedocs.io/en/latest/index.html
 Use the following commands and edit your .env file according to the format listed in the sample.
 >pip install praw
 
+>pip install pyttsx3
+
+>pip install dotenv
+
 >mv .env.example .env
