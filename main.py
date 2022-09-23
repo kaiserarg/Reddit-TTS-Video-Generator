@@ -29,7 +29,7 @@ else:
 subreddit = reddit.subreddit("askreddit")
 
 for submission in subreddit.top(limit=1, time_filter='week'):
-    print(submission.title)
+    postTitle = submission.title
 
     for top_level_comment in submission.comments:
         if isinstance(top_level_comment, MoreComments):

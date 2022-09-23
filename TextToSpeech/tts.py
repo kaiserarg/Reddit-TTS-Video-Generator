@@ -1,10 +1,11 @@
 import pyttsx3
+import main
 
 audio = pyttsx3.init()
 audio.setProperty('rate', 200)
 audio.setProperty('volume', 0.9)
 
-myAudio = "sample"
+postTitle = main.postTitle
 
-audio.save_to_file(myAudio, 'textToSpeechAudio.mp3')
+audio.save_to_file(postTitle, 'textToSpeechAudio.mp3')
 audio.runAndWait()
