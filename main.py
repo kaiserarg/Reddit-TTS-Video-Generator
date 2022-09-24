@@ -33,7 +33,6 @@ comments = []
 
 for submission in subreddit.top(limit=1, time_filter='week'):
     postTitle = submission.title
-    print(submission.title)
     
     for top_level_comment in submission.comments:
         if isinstance(top_level_comment, MoreComments):
@@ -46,7 +45,5 @@ for submission in subreddit.top(limit=1, time_filter='week'):
         else: 
             break
 
-
-print(comments)
-print(len(comments))
-
+#append postTitle to comments too so that the audio file plays the post title first
+comments.insert(0, postTitle)
