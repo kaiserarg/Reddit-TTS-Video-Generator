@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 *$py.class
 TextToSpeech/textToSpeechAudio.mp3
+*.png

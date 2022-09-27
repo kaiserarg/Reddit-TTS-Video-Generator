@@ -8,4 +8,6 @@ Use the following commands and edit your .env file according to the format liste
 
 >pip install dotenv
 
+>pip install Pillow
+
 >mv .env.example .env

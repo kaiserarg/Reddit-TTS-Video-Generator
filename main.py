@@ -30,6 +30,7 @@ subreddit = reddit.subreddit("askreddit")
 
 wordcount = 0 
 comments = []
+authors = []
 
 for submission in subreddit.top(limit=1, time_filter='week'):
     postTitle = submission.title
@@ -42,8 +43,10 @@ for submission in subreddit.top(limit=1, time_filter='week'):
         # limit it to 200 words,round down for comments 
         if(wordcount < 200):
             comments.append(top_level_comment.body) 
+            authors.append("u/" + top_level_comment.author.name + ": \n")
         else: 
             break
 
-#append postTitle to comments too so that the audio file plays the post title first
+#insert postTitle to comments too so that the audio file plays the post title first
+authors.insert(0, "u/" + submission.author.name + ": \n")
 comments.insert(0, postTitle)
