@@ -4,3 +4,7 @@ __pycache__/
 *$py.class
 TextToSpeech/textToSpeechAudio.mp3
 *.png
+Upload/Youtube/test.mp4
+Upload/Youtube/client_secrets.json
+Upload/Youtube/upload.sh
+Upload/Youtube/upload_video.py-oauth2.json
