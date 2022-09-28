@@ -32,7 +32,7 @@ wordcount = 0
 comments = []
 authors = []
 
-for submission in subreddit.top(limit=1, time_filter='week'):
+for submission in subreddit.top(limit=1, time_filter='day'):
     postTitle = submission.title
     
     for top_level_comment in submission.comments:
