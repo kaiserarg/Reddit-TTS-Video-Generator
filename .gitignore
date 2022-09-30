@@ -8,3 +8,4 @@ Upload/Youtube/test.mp4
 Upload/Youtube/upload.sh
 upload_video.py-oauth2.json
 client_secrets.json
+main.py-oauth2.json
