@@ -44,6 +44,7 @@ for submission in subreddit.top(limit=1, time_filter='day'):
         if isinstance(top_level_comment, MoreComments):
             continue
         wordcount += len(top_level_comment.body.strip().split(" "))
+        wordcount += len(postTitle.body.strip().split(" "))
 
         # limit it to 200 words,round down for comments 
         if(wordcount < 200):
