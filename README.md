@@ -8,6 +8,13 @@ Use the following commands and edit your .env file according to the format liste
 
 >pip install dotenv
 
->pip install Pillow
+>pip install Pillow  (version 9.2.0)
 
 >mv .env.example .env
+
+
+You have to create a youtube api and authenticate it with the api. 
+
+This is a good tutorial to get the api set up: https://www.youtube.com/watch?v=aFwZgth790Q
+
+
