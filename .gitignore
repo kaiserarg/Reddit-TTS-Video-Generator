@@ -9,3 +9,4 @@ Upload/Youtube/upload.sh
 upload_video.py-oauth2.json
 client_secrets.json
 main.py-oauth2.json
+test.mp4
