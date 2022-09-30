@@ -44,10 +44,10 @@ for submission in subreddit.top(limit=1, time_filter='day'):
         if isinstance(top_level_comment, MoreComments):
             continue
         wordcount += len(top_level_comment.body.strip().split(" "))
-        wordcount += len(postTitle.body.strip().split(" "))
+        title_len = len(postTitle.strip().split(" "))
 
         # limit it to 200 words,round down for comments 
-        if(wordcount < 200):
+        if(wordcount < 200 + title_len):
             comments.append(top_level_comment.body) 
             authors.append("u/" + top_level_comment.author.name + ": \n")
         else: 
