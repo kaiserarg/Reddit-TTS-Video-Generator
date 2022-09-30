@@ -3,6 +3,11 @@ import praw
 from praw.models import MoreComments
 import os
 from dotenv import load_dotenv
+from requests import post
+from Upload.Youtube.upload_video import upload_Video
+
+
+
 
 load_dotenv()
 
@@ -50,3 +55,22 @@ for submission in subreddit.top(limit=1, time_filter='day'):
 #insert postTitle to comments too so that the audio file plays the post title first
 authors.insert(0, "u/" + submission.author.name + ": \n")
 comments.insert(0, postTitle)
+
+
+
+#uploads the video and automatically assigns it a title 
+video_args = {
+    "file": "test.mp4",
+    "title": "Today in r/AskReddit: " + postTitle,
+    "description": "placeholder ",
+    "category": "22",
+    "keywords": "reddit, askreddit, idk ", 
+    "privacyStatus": "public"
+}
+
+upload_Video(video_args)
+
+
+
+
+
